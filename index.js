@@ -5,13 +5,18 @@ var http = require("http"),
     routes = require("./routes");
 
 
+//var User = require('./lib/users'),
+//    user = [];
+
+
 
 
 function requestHandler(request, response){
 
     var parsedUrl = url.parse(request.url, true),
         method = request.method.toLowerCase();
-
+    console.log("method ==>" + method);
+    console.log("parsedUrl ==>" + parsedUrl);
 
 
 
@@ -29,8 +34,11 @@ function requestHandler(request, response){
             }
         });
     }else{
-        response.statusCode = 404;
-        response.end("Not Found");
+
+        //console.log("statusCode ==>" + response.statusCode);
+        //response.statusCode = 404;
+
+        response.end("Not Found bla");
     }
 }
 
@@ -38,4 +46,4 @@ function requestHandler(request, response){
 var server  = http.createServer(requestHandler);
 
 
-server.listen(3000);
+server.listen(3000, '127.0.0.1');
