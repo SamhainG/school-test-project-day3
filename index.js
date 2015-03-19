@@ -17,7 +17,7 @@ function requestHandler(request, response){
 
     var parsedUrl = url.parse(request.url, true),
         method = request.method.toLowerCase();
-    console.log("method ==>" + method);
+    console.dir("url ==>" + url);
     console.log("parsedUrl ==>" + parsedUrl);
 
 
