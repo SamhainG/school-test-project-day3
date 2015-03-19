@@ -17,8 +17,7 @@ function requestHandler(request, response){
 
     var parsedUrl = url.parse(request.url, true),
         method = request.method.toLowerCase();
-    console.dir("url ==>" + url);
-    console.log("parsedUrl ==>" + parsedUrl);
+
 
 
 
@@ -32,13 +31,14 @@ function requestHandler(request, response){
                 }));
                 response.end();
             }else{
+                response.statusCode = 404;
                 response.end();
             }
         });
     }else{
 
         //console.log("statusCode ==>" + response.statusCode);
-        //response.statusCode = 404;
+        response.statusCode = 404;
       //  uc.methodCheck(method);
        /*
         getjson(url, function(data){
@@ -46,6 +46,7 @@ function requestHandler(request, response){
             console.log(data);
         });
         */
+
         response.end("Not Found bla");
     }
 }
