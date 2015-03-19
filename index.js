@@ -3,6 +3,12 @@
 var http = require("http"),
     url = require("url"),
     routes = require("./routes");
+ //   getjson = require("getjsoneasily"),
+ //   uc = require("./lib/usersController");
+
+
+//var User = require('./lib/users'),
+//    user = [];
 
 
 
@@ -25,12 +31,23 @@ function requestHandler(request, response){
                 }));
                 response.end();
             }else{
+                response.statusCode = 404;
                 response.end();
             }
         });
     }else{
+
+        //console.log("statusCode ==>" + response.statusCode);
         response.statusCode = 404;
-        response.end("Not Found");
+      //  uc.methodCheck(method);
+       /*
+        getjson(url, function(data){
+            // Do something with data
+            console.log(data);
+        });
+        */
+
+        response.end("Not Found bla");
     }
 }
 
@@ -38,4 +55,4 @@ function requestHandler(request, response){
 var server  = http.createServer(requestHandler);
 
 
-server.listen(3000);
+server.listen(3000, '127.0.0.1');
