@@ -3,6 +3,8 @@
 var http = require("http"),
     url = require("url"),
     routes = require("./routes");
+ //   getjson = require("getjsoneasily"),
+ //   uc = require("./lib/usersController");
 
 
 //var User = require('./lib/users'),
@@ -37,7 +39,13 @@ function requestHandler(request, response){
 
         //console.log("statusCode ==>" + response.statusCode);
         //response.statusCode = 404;
-
+      //  uc.methodCheck(method);
+       /*
+        getjson(url, function(data){
+            // Do something with data
+            console.log(data);
+        });
+        */
         response.end("Not Found bla");
     }
 }
